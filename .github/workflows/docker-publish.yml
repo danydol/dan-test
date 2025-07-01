@@ -31,8 +31,6 @@ jobs:
       id-token: write
 
     steps:
-      - name: Mask password
-        run: echo "::add-mask::${{ github.event.inputs.trigger_password }}"
       - name: Checkout repository
         uses: actions/checkout@v4
 
