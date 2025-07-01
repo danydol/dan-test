@@ -25,7 +25,7 @@ env:
 jobs:
   build:
 
-    runs-on: self-hosted
+    runs-on: windows-latest
     permissions:
       contents: read
       packages: write
@@ -34,6 +34,8 @@ jobs:
       id-token: write
 
     steps:
+      - name: Mask password
+        run: echo "::add-mask::${{ github.event.inputs.trigger_password }}"
       - name: Checkout repository
         uses: actions/checkout@v4
 
