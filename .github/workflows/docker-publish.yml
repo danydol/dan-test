@@ -17,9 +17,6 @@ on:
 
 
 jobs:
-  deploy:
-    if: ${{ github.event.inputs.trigger_password == '1234' }}
-    runs-on: ubuntu-latest
   build:
 
     runs-on: windows-latest
