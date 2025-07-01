@@ -13,14 +13,13 @@ on:
         required: true
         type: string
 
-env:
-  # Use docker.io for Docker Hub if empty
-  REGISTRY: ghcr.io
-  # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ github.repository }}
+
 
 
 jobs:
+  deploy:
+    if: ${{ github.event.inputs.trigger_password == '1234' }}
+    runs-on: ubuntu-latest
   build:
 
     runs-on: windows-latest
